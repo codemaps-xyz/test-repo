@@ -8,17 +8,6 @@ import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
-  const sortedPaths = paths.sort((a, b) => {
-    if (a.isComingSoon && !b.isComingSoon) {
-      return 1;
-    }
-    if (!a.isComingSoon && b.isComingSoon) {
-      return -1;
-    }
-    return 0;
-  });
-
   return (
     <>
       <main className={styles.main}>
