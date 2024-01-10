@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { Container, Flex, Heading, Text, Grid } from '@radix-ui/themes'
-import MapCard from '../components/MapCard'
+// import MapCard from '../components/MapCard'
 // import Navbar from '@/components/NavBar'
 import styles from '@/styles/Home.module.css'
 
