@@ -21,30 +21,8 @@ export default function Home({ paths }) {
 
   return (
     <>
-      <Head>
-        <title>Codemaps</title>
-        <meta name="description" content="Codemaps Learning Platform" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
-        <Container size="3" className={styles.mainContainer}>
-
-          <Flex className={styles.flexColumn}>
-            <Heading className={styles.heading}>Choose a Map</Heading>
-            <Text className={styles.text}>Select a Learning Path to get started!</Text>
-          </Flex>
-
-          <Flex className={styles.flexColumnGap}>
-            <Grid columns="4" gap="3" width="auto" className={styles.grid}>
-              {/* {sortedPaths.map((item, index) => (
-                <MapCard key={index} name={item.pathName} level={item.level} tag={item.tags} pathId={item.id} slug={item.slug} isComingSoon={item.isComingSoon} />
-              ))} */}
-            </Grid>
-          </Flex>
-
-        </Container>
+``      <h1>Hello World</h1>
       </main>
     </>
   )
