@@ -19,24 +19,24 @@ export default function Home() {
 
 // ... getStaticProps remains unchanged ...
 
-// export async function getStaticProps(context) {
+export async function getStaticProps(context) {
 
-//   try {
-//       const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-//       const res = await fetch( `${baseUrl}/api/paths`);
+  try {
+      const baseUrl = 'test-repo-1py6vevk2-codemaps-projects.vercel.app';
+      const res = await fetch( `${baseUrl}/api/paths`);
 
-//       if (!res.ok) {
-//           // Handle HTTP errors
-//           throw new Error(`Failed to fetch questions, status: ${res.status}`);
-//       }
+      if (!res.ok) {
+          // Handle HTTP errors
+          throw new Error(`Failed to fetch questions, status: ${res.status}`);
+      }
 
-//       const paths = await res.json();
-//       return {
-//         props: { paths },
-//       };
+      const paths = await res.json();
+      return {
+        props: { paths },
+      };
 
-//   } catch (error) {
-//       console.error(error);
-//       return { notFound: true };
-//   }
-// }
+  } catch (error) {
+      console.error(error);
+      return { notFound: true };
+  }
+}
