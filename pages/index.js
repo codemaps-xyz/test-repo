@@ -22,8 +22,8 @@ export default function Home() {
 export async function getStaticProps(context) {
 
   try {
-      const baseUrl = 'test-repo-1py6vevk2-codemaps-projects.vercel.app';
-      const res = await fetch( `${baseUrl}/api/paths`);
+      const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+      const res = await fetch( `${baseUrl}/api/test`);
 
       if (!res.ok) {
           // Handle HTTP errors
