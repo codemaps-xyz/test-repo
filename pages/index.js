@@ -26,7 +26,7 @@ export async function getStaticProps(context) {
     const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
     console.log("Base URL:", baseUrl);
 
-    const apiEndpoint = `${baseUrl}/api/test`;
+    const apiEndpoint = `${baseUrl}/api/paths`;
     console.log("Fetching data from:", apiEndpoint);
 
     const res = await fetch(apiEndpoint);
