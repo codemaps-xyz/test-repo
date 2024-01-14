@@ -4,7 +4,9 @@ import { Container, Flex, Heading, Text, Grid } from '@radix-ui/themes'
 // import MapCard from '../components/MapCard'
 // import Navbar from '@/components/NavBar'
 import styles from '@/styles/Home.module.css'
-import { headers } from '@/next.config'
+// import { headers } from '@/next.config'
+import { headers } from 'next/headers'
+import { cookies } from 'next/headers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,8 +26,10 @@ export async function getStaticProps(context) {
   try {
     console.log('CONTEXT : ',context)
     console.log("getStaticProps started");
-    const cookies = context.req.headers.cookie;
-    console.log( cookies )
+    const cookieStore = cookies()
+    const cookieString = cookieStore.getAll()
+    // const cookies = context.req.headers.cookie;
+    console.log( cookieString )
 
     const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
     console.log("Base URL:", baseUrl);
