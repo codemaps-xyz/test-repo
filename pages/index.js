@@ -8,7 +8,18 @@ import { headers } from '@/next.config'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
+const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
+console.log("Base URL:", baseUrl);
+
+const apiEndpoint = `${baseUrl}/api/test`;
+console.log("Fetching data from:", apiEndpoint);
+//const options = { headers: { Cookie : '_vercel_jwt=' + 'cookies' } };
+const res = await fetch(apiEndpoint);
+console.log( res )
+
 export default function Home() {
+  
   return (
     <>
       <main className={styles.main}>
