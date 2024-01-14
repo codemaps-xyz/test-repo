@@ -33,36 +33,25 @@ export default function Home() {
 
 export async function getStaticProps(context) {
   try {
-    console.log('CONTEXT : ',context)
-    console.log("getStaticProps started");
-    // const cookieStore = cookies()
-    // const cookieString = cookieStore.getAll()
 
-    if ( context && context.req ){
-      const cookies = context.req.headers.cookie;
-      console.log( cookies )
+    const baseUrl = 'https://test-repo-silk.vercel.app';
+    console.log("Base URL:", baseUrl);
+
+    const apiEndpoint = `${baseUrl}/api/test`;
+    console.log("Fetching data from:", apiEndpoint);
+    const options = { headers: { Authorization: 'bearer du4GAz1C8ryKet6GSJoY4wKW' } };
+    const res = await fetch(apiEndpoint, options );
+
+    if (!res.ok) {
+      console.error("Failed to fetch data. Status:", res.status);
+      throw new Error(`Failed to fetch paths, status: ${res.status}`);
     }
-    
-    // console.log( cookieString )
 
-    // const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
-    // console.log("Base URL:", baseUrl);
-
-    // const apiEndpoint = `${baseUrl}/api/test`;
-    // console.log("Fetching data from:", apiEndpoint);
-    // //const options = { headers: { Cookie : '_vercel_jwt=' + 'cookies' } };
-    // const res = await fetch(apiEndpoint);
-
-    // if (!res.ok) {
-    //   console.error("Failed to fetch data. Status:", res.status);
-    //   throw new Error(`Failed to fetch paths, status: ${res.status}`);
-    // }
-
-    // const paths = await res.json();
-    // console.log("Fetched data:", paths);
+    const paths = await res.json();
+    console.log("Fetched data:", paths);
 
     return {
-      props: { },
+      props: { paths },
     };
 
   } catch (error) {
