@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-``      <h1>Hello World</h1>
+        <h1>Hello World</h1>
       </main>
     </>
   )
@@ -45,24 +45,24 @@ export async function getStaticProps(context) {
     
     // console.log( cookieString )
 
-    const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
-    console.log("Base URL:", baseUrl);
+    // const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
+    // console.log("Base URL:", baseUrl);
 
-    const apiEndpoint = `${baseUrl}/api/test`;
-    console.log("Fetching data from:", apiEndpoint);
-    //const options = { headers: { Cookie : '_vercel_jwt=' + 'cookies' } };
-    const res = await fetch(apiEndpoint);
+    // const apiEndpoint = `${baseUrl}/api/test`;
+    // console.log("Fetching data from:", apiEndpoint);
+    // //const options = { headers: { Cookie : '_vercel_jwt=' + 'cookies' } };
+    // const res = await fetch(apiEndpoint);
 
-    if (!res.ok) {
-      console.error("Failed to fetch data. Status:", res.status);
-      throw new Error(`Failed to fetch paths, status: ${res.status}`);
-    }
+    // if (!res.ok) {
+    //   console.error("Failed to fetch data. Status:", res.status);
+    //   throw new Error(`Failed to fetch paths, status: ${res.status}`);
+    // }
 
-    const paths = await res.json();
-    console.log("Fetched data:", paths);
+    // const paths = await res.json();
+    // console.log("Fetched data:", paths);
 
     return {
-      props: { paths },
+      props: { },
     };
 
   } catch (error) {
