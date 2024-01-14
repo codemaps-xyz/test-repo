@@ -4,6 +4,7 @@ import { Container, Flex, Heading, Text, Grid } from '@radix-ui/themes'
 // import MapCard from '../components/MapCard'
 // import Navbar from '@/components/NavBar'
 import styles from '@/styles/Home.module.css'
+import { headers } from '@/next.config'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +22,10 @@ export default function Home() {
 
 export async function getStaticProps(context) {
   try {
+    console.log('CONTEXT : ',context)
     console.log("getStaticProps started");
+    const cookies = context.req.headers.cookie;
+    console.log( cookies )
 
     const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
     console.log("Base URL:", baseUrl);
@@ -29,7 +33,7 @@ export async function getStaticProps(context) {
     const apiEndpoint = `${baseUrl}/api/test`;
     console.log("Fetching data from:", apiEndpoint);
 
-    const res = await fetch(apiEndpoint);
+    const res = await fetch(apiEndpoint, { headers: { Cookie : '_vercel_jwt=' + cookies } } );
 
     if (!res.ok) {
       console.error("Failed to fetch data. Status:", res.status);
