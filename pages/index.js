@@ -29,9 +29,10 @@ export async function getStaticProps(context) {
 
     if ( context && context.req ){
       const cookies = context.req.headers.cookie;
+      console.log( cookies )
     }
     
-    console.log( cookieString )
+    // console.log( cookieString )
 
     const baseUrl = 'https://test-repo-1py6vevk2-codemaps-projects.vercel.app';
     console.log("Base URL:", baseUrl);
