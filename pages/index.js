@@ -4,8 +4,8 @@ import { Container, Flex, Heading, Text, Grid } from '@radix-ui/themes'
 // import MapCard from '../components/MapCard'
 // import Navbar from '@/components/NavBar'
 import styles from '@/styles/Home.module.css'
-// import { headers } from '@/next.config'
-import { headers } from 'next/headers'
+import { headers } from '@/next.config'
+//import { headers } from 'next/headers'
 import { cookies } from 'next/headers'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
     const apiEndpoint = `${baseUrl}/api/test`;
     console.log("Fetching data from:", apiEndpoint);
 
-    const res = await fetch(apiEndpoint, { headers: { Cookie : '_vercel_jwt=' + cookies } } );
+    const res = await fetch(apiEndpoint, { headers: { Cookie : '_vercel_jwt=' + 'cookies' } } );
 
     if (!res.ok) {
       console.error("Failed to fetch data. Status:", res.status);
